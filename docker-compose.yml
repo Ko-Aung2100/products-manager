@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web-api:
+    # Build the image from the current folder (.)
+    build: . 
+    
+    # Map port 3000 on your laptop to port 3000 inside the container
+    ports:
+      - "3000:3000"
+    
+    # Restart automatically if it crashes
+    restart: always
+    
+    # Set environment variables (optional, but good practice)
+    environment:
+      - NODE_ENV=production
